@@ -1,11 +1,15 @@
 <?php
-if(!mysql_connect("localhost","root","Aq12wsxz"))
+$connection = "";
+$user = "";
+$password = "";
+
+if(!mysql_connect($connection,$user,$password))
 {
-     die('oops connection problem ! --> '.mysql_error());
+	die('oops connection problem ! --> '.mysql_error());
 }
 
 if(!mysql_select_db("beta"))
 {
-     die('oops database selection problem ! --> '.mysql_error());
+	die('oops database selection problem ! --> '.mysql_error());
 }
 ?>
