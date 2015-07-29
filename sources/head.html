@@ -24,12 +24,13 @@ $userRow=mysql_fetch_array($res);
 <div class="header-nav center page-width">
 
 <a class="menu-item" href="index.php">
-<img src="sources/img/beta.png" height="34px" width="34px">
+<img src="sources/img/beta.png" height="35px" width="35px">
 </a>
-<p class="menu-item" style="margin:0px;font-size:30px;font-family:georgia;">BETA</p>
+<p class="menu-item" style="font-size:30px;font-family:georgia;">BETA</p>
 
 <div class="header-right header-nav">
-<p style="margin:8.5px;">Welcome <?php echo $userRow['username']; ?> &nbsp;<a href="logout.php?logout">Sign Out</a></p>
+<a class="header-nav-link" href="logout.php?logout">Sign Out</a>
+<p style="margin:8.5px;float:right;">Welcome <?php echo $userRow['username']; ?></p>
 </div>
 
 </div>

@@ -2,6 +2,12 @@
 /* CSS Document */
 @import url("transitions.css");
 
+*
+{
+ margin:0;
+ padding:0;
+}
+
 #footer {
 	position: fixed;
 	bottom: -20;
@@ -26,6 +32,21 @@
 	margin:0px auto;
 }
 
+.header-nav-link {
+	display: block;
+	float:right;
+	margin: 7.5px;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 20px;
+	color: #333;
+	text-decoration:none;
+}
+
+.header-nav-link:hover {
+	color:#4078c0;
+}
+
 .header-right {
 	float: right;
 }
@@ -44,11 +65,7 @@
 	margin: 0px auto;
 }
 
-*
-{
- margin:0;
- padding:0;
-}
+
 #login-form
 {
  margin-top:70px;
