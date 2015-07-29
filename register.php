@@ -31,13 +31,16 @@ if(isset($_POST['btn-signup']))
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>BETA registration</title>
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="sources/style.css" type="text/css" />
 
 </head>
 <body>
 <center>
 <div id="login-form">
 <form method="post">
+<a href="index.php">
+<img src="sources/img/beta.png" height="250px" width="250px">
+</a>
 <table align="center" width="30%" border="0">
 <tr>
 <td><input type="text" name="uname" placeholder="User Name" required /></td>
