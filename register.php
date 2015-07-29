@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['user'])!="")
 {
- header("Location: index.php");
+ header("Location: home.php");
 }
 include 'dbconnect.php';
 
@@ -10,7 +10,7 @@ if(isset($_POST['btn-signup']))
 {
  $uname = mysql_real_escape_string($_POST['uname']);
  $email = mysql_real_escape_string($_POST['email']);
- $upass = md5(mysql_real_escape_string($_POST['pass']));
+ $upass = mysql_real_escape_string($_POST['pass']);
  
  if(mysql_query("INSERT INTO users(username,email,password) VALUES('$uname','$email','$upass')"))
  {
@@ -30,7 +30,7 @@ if(isset($_POST['btn-signup']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Login & Registration System</title>
+<title>BETA registration</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 </head>

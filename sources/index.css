@@ -28,6 +28,10 @@ body {
 	margin:0px auto;
 }
 
+.header-right {
+	float: right;
+}
+
 .center {
 	margin: 0px auto;
 }

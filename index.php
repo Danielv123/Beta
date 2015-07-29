@@ -4,25 +4,25 @@ include_once 'dbconnect.php';
 
 if(isset($_SESSION['user'])!="")
 {
- header("Location: home.php");
+	header("Location: home.php");
 }
 if(isset($_POST['btn-login']))
 {
- $email = mysql_real_escape_string($_POST['email']);
- $upass = mysql_real_escape_string($_POST['pass']);
- $res=mysql_query("SELECT * FROM users WHERE email='$email'");
- $row=mysql_fetch_array($res);
- if($row['password']==md5($upass))
- {
-  $_SESSION['user'] = $row['user_id'];
-  header("Location: home.php");
- }
- else
- {
-  ?>
-        <script>alert('wrong details');</script>
-        <?php
- }
+	$email = mysql_real_escape_string($_POST['email']);
+	$upass = mysql_real_escape_string($_POST['pass']);
+	$res=mysql_query("SELECT * FROM users WHERE email='$email'");
+	$row=mysql_fetch_array($res);
+	if($row['password']==$upass)
+		{
+			$_SESSION['user'] = $row['user_id'];
+			header("Location: home.php");
+		}
+	else
+		{
+			?>
+			<script>alert('Wrong email or password.');</script>
+			<?php
+		}
  
 }
 ?>
@@ -30,7 +30,7 @@ if(isset($_POST['btn-login']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>cleartuts - Login & Registration System</title>
+<title>BETA Login</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>

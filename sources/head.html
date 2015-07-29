@@ -1,3 +1,14 @@
+<?php
+session_start();
+include_once 'dbconnect.php';
+
+if(!isset($_SESSION['user']))
+{
+ header("Location: index.php");
+}
+$res=mysql_query("SELECT * FROM users WHERE user_id=".$_SESSION['user']);
+$userRow=mysql_fetch_array($res);
+?>
 <doctype html>
 <head>
 <link rel="stylesheet" type="text/css" href="sources/index.css">
@@ -17,8 +28,12 @@
 </a>
 <p class="menu-item" style="margin:0px;font-size:30px;font-family:georgia;">BETA</p>
 
+<div class="header-right header-nav">
+<p style="margin:8.5px;">Welcome <?php echo $userRow['username']; ?> &nbsp;<a href="logout.php?logout">Sign Out</a></p>
 </div>
 
 </div>
+
+</div> <!-- End of Headerbar -->
 
 <div class="page page-width">
