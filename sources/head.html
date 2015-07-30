@@ -24,7 +24,7 @@ $userRow=mysql_fetch_array($res);
 				<img src="sources/img/beta.png" height="35px" width="35px">
 			</a>
 			<p class="menu-item" style="font-size:30px;font-family:georgia;">BETA</p>
-			<input class="input" "type="text" name="search" placeholder="Search"/>
+			<input id="search" "type="text" name="search" placeholder="Search"/>
 			<div class="header-right header-nav">
 				<a class="header-nav-link" href="logout.php?logout">Sign Out</a>
 				<p style="margin:8.5px;float:right;">Welcome <?php echo $userRow['username']; ?></p>

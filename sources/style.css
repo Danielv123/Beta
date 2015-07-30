@@ -66,8 +66,8 @@
 	margin: 0px auto;
 }
 
-.input {
-	width:65%;
+#search {
+	width:300px;
 	height:35px;
 	border:solid #e1e1e1 1px;
 	border-radius:5px;
