@@ -2,7 +2,8 @@
 A portal for public betas and projects in development
 
 
-Setup:
+#Setup:
+
 Clone project into a web directory
 
 Change  the 3 first variables in dbconnect.php to your MySQL servers address, username and password.
