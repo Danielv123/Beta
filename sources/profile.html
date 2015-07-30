@@ -1,7 +1,33 @@
 <br><br><br><title>BETA - Profile</title>
+<?php
+if(isset($_POST['btn-about']))
+{
+	$about = mysql_real_escape_string($_POST['about']);
+	
+	if(mysql_query("UPDATE `beta`.`users` SET `about` = '$about' WHERE `users`.`user_id` = '$userId'"))
+	{
+		?>
+		<script>alert('Profile updated ');</script>
+		<?php
+	}
+	else
+	{
+		?>
+		<script>alert('Error while updating profile...');</script>
+        <?php
+	}
+}
+?>
 
 <h1>Profile</h1>
-<div style="width:150px; height:180px; float:right; margin-left:10px;" id="profile-picture-container">
+
+<form style="float:left;" method="post">
+	<textarea style="float:left; width:830px;" maxlength="999" name="about" rows="15" cols="80" type="text"><?php echo $userRow['about']; ?></textarea>
+	<br>
+	<input style="float:left;" type="submit" value="submit" name="btn-about">
+</form>
+
+<div style="width:150px; height:180px; float:right;" id="profile-picture-container">
 	<img style="float:left;" src="<?php echo $userRow['picture']; ?>" height="150px" width="150px">
-	<button style="float:left;width:150px;">Change Picture</button>
+	<input style="width:150px; float:left;" type="submit" value="Change picture">
 </div>
