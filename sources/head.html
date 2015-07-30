@@ -13,7 +13,7 @@ $userRow=mysql_fetch_array($res);
 <head>
 <link rel="stylesheet" href="sources/style.css" type="text/css" />
 <script language="JavaScript" SRC="sources/index.js"></script>
-<title>BETA - Dashboard</title>
+
 </head>
 
 
@@ -26,6 +26,9 @@ $userRow=mysql_fetch_array($res);
 			<p class="menu-item" style="font-size:30px;font-family:georgia;">BETA</p>
 			<input id="search" "type="text" name="search" placeholder="Search"/>
 			<div class="header-right header-nav">
+				<a href="profile.php">
+					<img style="float:right;" src="<?php echo $userRow['picture']; ?>" height="35px" width="35px">
+				</a>
 				<a class="header-nav-link" href="logout.php?logout">Sign Out</a>
 				<p style="margin:8.5px;float:right;">Welcome <?php echo $userRow['username']; ?></p>
 			</div>
