@@ -60,11 +60,38 @@
 }
 
 .page {
+	position:initial;
 	height: 100%;
 	background-color: white;
 	margin: 0px auto;
 }
 
+.input {
+	width:65%;
+	height:35px;
+	border:solid #e1e1e1 1px;
+	border-radius:5px;
+	margin-left:10px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+	background:#f9f9f9;
+	transition-duration:0.5s;
+	box-shadow: inset 0px 0px 1px rgba(0,0,0,0.6);
+}
+
+.project {
+	min-height:100px;
+	min-width:100%;
+	border-radius:15px;
+	border:solid #e1e1e1 1px;
+}
+
+.project-container {
+	position:absolute;
+	top:60px;
+	width:760px;
+	/*background-color:grey;		Debug color*/
+}
 
 #login-form
 {
