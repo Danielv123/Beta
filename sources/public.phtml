@@ -1,0 +1,15 @@
+<br><br><br>
+
+<?php
+	$user = $_GET['user'];
+	
+	$res=mysql_query("SELECT * FROM users WHERE user_id='$user'");
+	$row=mysql_fetch_array($res);
+?>
+
+
+<div id="about">
+	<p><?php echo $row['about']; ?></p>
+
+
+</div>
