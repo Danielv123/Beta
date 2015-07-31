@@ -1,3 +1,3 @@
-<?php include('/sources/head.html');?>
-<?php include('/sources/profile.html');?>
-<?php include('/sources/footer.html');?>
+<?php include('/sources/head.phtml');?>
+<?php include('/sources/profile.phtml');?>
+<?php include('/sources/footer.phtml');?>
