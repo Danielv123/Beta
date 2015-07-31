@@ -15,7 +15,7 @@ $userId = $userRow["user_id"];
 <doctype html>
 <head>
 <link rel="stylesheet" href="sources/style.css" type="text/css" />
-<script language="JavaScript" SRC="sources/index.js"></script>
+<!-- <script language="JavaScript" SRC="sources/index.js"></script> -->
 
 </head>
 
@@ -28,7 +28,11 @@ $userId = $userRow["user_id"];
 				<img src="sources/img/beta.png" height="35px" width="35px">
 			</a>
 			<p class="menu-item" style="font-size:30px;font-family:georgia;">BETA</p>
-			<input id="search" "type="text" name="search" placeholder="Search"/>
+			
+			<form style="float: left;" method="post" action="search.php">
+				<input id="search" type="text" name="search" placeholder="Search"/>
+			</form>
+			
 			<div class="header-right header-nav">
 				<a href="profile.php">
 					<img style="float:right;" src="<?php echo $userRow['picture']; ?>" height="35px" width="35px">
