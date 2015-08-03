@@ -1,7 +1,6 @@
 # Beta
 A portal for public betas and projects in development
 
-
 #Setup:
 
 Clone project into a web directory
