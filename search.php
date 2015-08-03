@@ -10,7 +10,7 @@ include('/sources/head.phtml');
 		$search=$_POST['search']; 
 		
 		//-query  the database table 
-		$sql="SELECT  user_id, username, email, about FROM users WHERE username LIKE '%" . $search .  "%' OR email LIKE '%" . $search ."%'"; 
+		$sql="SELECT  user_id, username, email, about, picture FROM users WHERE username LIKE '%" . $search .  "%' OR email LIKE '%" . $search ."%'"; 
 		//-run  the query against the mysql query function 
 		$result=mysql_query($sql);
 		//-create  while loop and loop through result set 
@@ -19,6 +19,7 @@ include('/sources/head.phtml');
 			$email=$row['email'];
 			$user_id=$row['user_id'];
 			$about=$row['about'];
+			$picture=$row['picture'];
 			
 			if(!isset($about)){
 				$about="<i>This person has not added a profile description yet.</i>";
@@ -26,6 +27,7 @@ include('/sources/head.phtml');
 			
 			echo "
 				<a  class='search-result' href=\"public.php?user=$user_id\">
+					<img src='$picture'>
 					<h1 class='text'>$username</h1>
 					<p class='text'>$email</p>
 				</a>

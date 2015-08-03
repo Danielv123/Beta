@@ -87,6 +87,12 @@
 	display:block;
 }
 
+.search-result img {
+	float:left;
+	height:47px;
+	width:47px;
+}
+
 .search-result h1.text {
 	color: black;
 	margin: 5px;
