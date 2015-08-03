@@ -80,6 +80,25 @@
 	box-shadow: inset 0px 0px 1px rgba(0,0,0,0.6);
 }
 
+.search-result {
+	text-decoration:none;
+	min-height:47px;
+	min-width:100%;
+	display:block;
+}
+
+.search-result h1.text {
+	color: black;
+	margin: 5px;
+	float:left;
+}
+
+.search-result p.text {
+	color: darkgrey;
+	margin: 14.5px;
+	float: right;
+}
+
 .project {
 	min-height:100px;
 	min-width:100%;

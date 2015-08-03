@@ -10,17 +10,27 @@ include('/sources/head.phtml');
 		$search=$_POST['search']; 
 		
 		//-query  the database table 
-		$sql="SELECT  user_id, username, email FROM users WHERE username LIKE '%" . $search .  "%' OR email LIKE '%" . $search ."%'"; 
+		$sql="SELECT  user_id, username, email, about FROM users WHERE username LIKE '%" . $search .  "%' OR email LIKE '%" . $search ."%'"; 
 		//-run  the query against the mysql query function 
 		$result=mysql_query($sql);
 		//-create  while loop and loop through result set 
 		while($row=mysql_fetch_array($result)){ 
-			$username=$row['username']; 
-			$email=$row['email']; 
-			$user_id=$row['user_id']; 
-		echo "<ul>\n"; 
-		echo "<li>" . "<a  href=\"public.php?user=$user_id\">"   .$username . " " . $email .  "</a></li>\n"; 
-		echo "</ul>"; 
+			$username=$row['username'];
+			$email=$row['email'];
+			$user_id=$row['user_id'];
+			$about=$row['about'];
+			
+			if(!isset($about)){
+				$about="<i>This person has not added a profile description yet.</i>";
+			}
+			
+			echo "
+				<a  class='search-result' href=\"public.php?user=$user_id\">
+					<h1 class='text'>$username</h1>
+					<p class='text'>$email</p>
+				</a>
+					<p class='about'>$about</p>
+			";
 		} 
 	} 
 	else{ 
