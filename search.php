@@ -2,9 +2,9 @@
 
 include('/sources/head.phtml');
 
-?>
-<br><br><br><title>Search</title>
-<?php
+
+echo "<br><br><br><title>Search</title>";
+
 	if(isset($_POST['search'])){
 	if(preg_match("/^[  a-zA-Z]+/", $_POST['search'])){ 
 		$search=$_POST['search']; 
