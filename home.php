@@ -1,3 +1,5 @@
-<?php include('/sources/head.phtml');?>
-<?php include('/sources/home.phtml');?>
-<?php include('/sources/footer.phtml');?>
+<?php
+include('/sources/head.phtml');
+include('/sources/home.phtml');
+include('/sources/footer.phtml');
+?>

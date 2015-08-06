@@ -3,15 +3,32 @@
 
 <div class="project-container">
 <?php
+	$identifier=true;
+	//-query  the database table 
+	$sql="SELECT * FROM projects WHERE public LIKE '%" . $identifier . "%'"; 
+	//-run  the query against the mysql query function 
+	$result=mysql_query($sql);
+	//-create  while loop and loop through result set 
+	while($row=mysql_fetch_array($result)){ 
+		$project_id=$row['project_id'];
+		$owner=$row['owner'];
+		$project_name=$row['project_name'];
+		$project_description_short=$row['project_description_short'];
+		$project_description=$row['project_description'];
+		
+		if(!isset($project_description_short)){
+			$about="<i>This project has no short description.</i>";
+		}
+		echo "
+			<a  class='identifier-result' href=\'public.php?user=$owner\'>
+				<img src='$picture'>
+				<h1 class='text'>$project_name</h1>
+				<p class='text'>$owner</p>
+			</a>
+				<p class='about'>$project_description</p>
+		";
+	}
 
-<div class="project"> <!-- Start of project template -->
-$project1 = "ProjectName";
-$projectInfo1 = "Info about project";
-	echo "
-		<h1 style='margin:5px;'>$project1</h1>
-		<p style='margin:5px;'>$projectInfo1</p>
-	";
-</div> <!-- End of project -->
 ?>
 
 </div>
