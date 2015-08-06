@@ -7,8 +7,9 @@
 	$row=mysql_fetch_array($res);
 ?>
 
-
+<title><?php echo $row['username']; ?> profile</title>
 <div id="about">
+	<h1 style="float:left; width:830px;"><?php echo $row['username']; ?></h1>
 	<p style="float:left; width:830px;"><?php echo $row['about']; ?></p>
 </div>
 
