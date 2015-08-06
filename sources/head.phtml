@@ -4,12 +4,12 @@ include_once 'dbconnect.php';
 
 if(!isset($_SESSION['user']))
 {
- header("Location: index.php");
+	header("Location: index.php");
 }
 
 $res=mysql_query("SELECT * FROM users WHERE user_id=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
-$userId = $userRow["user_id"];
+$user_id = $userRow["user_id"];
 
 ?>
 <doctype html>

@@ -11,7 +11,7 @@
 	//-create  while loop and loop through result set 
 	while($row=mysql_fetch_array($result)){ 
 		$project_id=$row['project_id'];
-		$owner=$row['owner'];
+		$project_owner=$row['project_owner'];
 		$project_name=$row['project_name'];
 		$project_description_short=$row['project_description_short'];
 		$project_description=$row['project_description'];
@@ -19,13 +19,17 @@
 		if(!isset($project_description_short)){
 			$about="<i>This project has no short description.</i>";
 		}
+		
+		if ($project_owner==$user_id){
+			$custom1 = "You own this";
+		}
+		
 		echo "
-			<a  class='identifier-result' href=\'public.php?user=$owner\'>
-				<img src='$picture'>
+			<a  class='search-result' href='project.php?project=$project_id'>
 				<h1 class='text'>$project_name</h1>
-				<p class='text'>$owner</p>
+				<p class='text'>$custom1</p>
 			</a>
-				<p class='about'>$project_description</p>
+				<p class='about'>$project_description_short</p>
 		";
 	}
 

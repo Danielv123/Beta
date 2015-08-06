@@ -4,7 +4,7 @@ if(isset($_POST['btn-about']))
 {
 	$about = mysql_real_escape_string($_POST['about']);
 	
-	if(mysql_query("UPDATE `beta`.`users` SET `about` = '$about' WHERE `users`.`user_id` = '$userId'"))
+	if(mysql_query("UPDATE `beta`.`users` SET `about` = '$about' WHERE `users`.`user_id` = '$user_id'"))
 	{
 		?>
 		<script>alert('Profile updated ');</script>
