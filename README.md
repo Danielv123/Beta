@@ -9,7 +9,7 @@ Change  the 3 first variables in dbconnect.php to your MySQL servers address, us
 
 Run this SQL code to prepare the databases:
 -----------------------------------------------
-````
+```sql
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -87,4 +87,4 @@ ALTER TABLE `projects`
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
   
-  ````
+  ```
