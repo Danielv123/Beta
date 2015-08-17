@@ -1,0 +1,20 @@
+<br><br><br>
+
+<?php
+	$project = $_GET['project'];
+	
+	$res=mysql_query("SELECT * FROM projects WHERE project_id='$project'");
+	$row=mysql_fetch_array($res);
+?>
+
+<title><?php echo $row['project_name']; ?> profile</title>
+<div id="about">
+	<h1 style="float:left; width:830px;"><?php echo $row['project_name']; ?></h1>
+	<p style="float:left; width:830px;"><i><?php echo $row['project_description_short']; ?></i></p>
+	
+	<p style="float:left; width:830px; margin-top:20px;"><?php echo $row['project_description']?></p>
+</div>
+
+<div style="width:150px; height:180px; float:right;" id="profile-picture-container">
+	<img style="float:left;" src="<?php echo $row['picture']; ?>" height="150px" width="150px">
+</div>
